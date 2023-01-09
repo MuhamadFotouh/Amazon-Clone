@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <!-- fa -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- BS CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <!-- custom css -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- header section starts  -->
+    <header class="fixed-top">
+      <nav class="navbar navbar-expand-lg">
+        <div class="container">
+          <a class="h1 navbar-brand text-light fs-1" href="/">Amazon</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <i class="fa-solid fa-bars text-light fs-1"></i>
+          </button>
+          <div
+            class="collapse navbar-collapse justify-content-end"
+            id="navbarSupportedContent"
+          >
+            <ul class="navbar-nav mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a
+                  class="nav-link active text-light fw-bold"
+                  aria-current="page"
+                  href="/"
+                  >Home</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-light fw-bold" href="/about.html"
+                  >About</a
+                >
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link text-light fw-bold" href="/contact.html"
+                  >Contact Us</a
+                >
+              </li>
+              <li class="nav-item">
+                <a href="#" class="fas fa-shopping-cart"></a>
+                <p id="count">0</p>
+                <div class="cart">
+                  <div class="head"><p>Cart</p></div>
+                  <div id="cartItem">Your cart is empty</div>
+                  <div class="foot">
+                    <h3>Total</h3>
+                    <h2 id="total">$ 0.00</h2>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <!-- header section ends -->
+
+    <!-- Main  starts  -->
+    <main>
+      <!-- Slider Section starts -->
+      <section class="justify-content-center mt-5 position-relative">
+        <div class="col pt-3">
+          <img src="imgs/1.jpg" id="sliderImg" class="slider-img" alt="" />
+        </div>
+        <div class="fas fa-chevron-left slide-btn prev" onclick="previous()">
+          <div class="dark-layer"></div>
+        </div>
+        <div class="fas fa-chevron-right slide-btn next" onclick="next()">
+          <div class="dark-layer"></div>
+        </div>
+      </section>
+      <!-- Slider Section ends -->
+
+      <!-- product section starts -->
+      <section class="justify-content-center mt-5" id="products">
+        <div class="container">
+          <ul class="nav nav-tabs fs-5">
+            <li class="nav-item">
+              <a class="nav-link active" data-category=".all">All</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-category=".mobile">Mobile Phones</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-category=".pods">Air Pods</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-category=".camera">Cameras</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-category=".head-phone">Head Phones</a>
+            </li>
+          </ul>
+          <!-- Products -->
+          <div class="row" id="root">
+            <!-- <div class="card my-4 mx-2 all web" style="width: 26rem">
+              <img
+                class="card-img-top"
+                src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"
+                alt="Card image cap"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </p>
+                <a href="#" class="btn btn-primary">Add to cart</a>
+              </div>
+            </div>
+            <div class="card my-4 mx-2 all web" style="width: 26rem">
+              <img
+                class="card-img-top"
+                src="portfolio-1.jpg"
+                alt="Card image cap"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </p>
+                <a href="#" class="btn btn-primary">Add to cart</a>
+              </div>
+            </div>
+            <div class="card my-4 mx-2 all gfx" style="width: 26rem">
+              <img
+                class="card-img-top"
+                src="portfolio-1.jpg"
+                alt="Card image cap"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </p>
+                <a href="#" class="btn btn-primary">Add to cart</a>
+              </div>
+            </div>
+
+            <div class="card my-4 mx-2 all gfx" style="width: 26rem">
+              <img
+                class="card-img-top"
+                src="portfolio-1.jpg"
+                alt="Card image cap"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </p>
+                <a href="#" class="btn btn-primary">Add to cart</a>
+              </div>
+            </div>
+            <div class="card my-4 mx-2 all marketing" style="width: 26rem">
+              <img
+                class="card-img-top"
+                src="portfolio-1.jpg"
+                alt="Card image cap"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </p>
+                <a href="#" class="btn btn-primary">Add to cart</a>
+              </div>
+            </div>
+            <div class="card my-4 mx-2 all marketing" style="width: 26rem">
+              <img
+                class="card-img-top"
+                src="portfolio-1.jpg"
+                alt="Card image cap"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </p>
+                <a href="#" class="btn btn-primary">Add to cart</a>
+              </div>
+            </div> -->
+          </div>
+        </div>
+      </section>
+      <!-- product section ends -->
+  
+    </main>
+    <!-- Main ends -->
+    <i class="fa-solid fa-up"></i>
+
+    <!-- Footer -->
+    <footer class="text-light">
+      <div class="container py-5 py-md-6">
+        <div class="row justify-content-md-center">
+          <div class="col-4 col-md-2 text-center">
+            <h5>Get to Know Us</h5>
+            <p><a href="#">team</a></p>
+            <p><a href="#">careers</a></p>
+            <p><a href="#">blog</a></p>
+            <p><a href="#">privacy</a></p>
+            <p><a href="#">policy</a></p>
+          </div>
+          <div class="col-4 col-md-2 text-center">
+            <h5>Shop with Us</h5>
+            <p><a href="#">Your Account</a></p>
+            <p><a href="#">Your Orders</a></p>
+            <p><a href="#">Your Addresses</a></p>
+            <p><a href="#">Your Lists</a></p>
+          </div>
+          <div class="col-4 col-md-2 social text-center">
+            <h5>Social</h5>
+            <p>
+              <a href="https://twitter.com"
+                ><i class="fa-brands fa-twitter"></i
+              ></a>
+            </p>
+            <p>
+              <a href="https://instagram.com"
+                ><i class="fa-brands fa-instagram"></i
+              ></a>
+            </p>
+            <p>
+              <a href="https://facebook.com"
+                ><i class="fa-brands fa-facebook"></i
+              ></a>
+            </p>
+            <p>
+              <a href="https://youtube.com"
+                ><i class="fa-brands fa-youtube"></i
+              ></a>
+            </p>
+          </div>
+          <div class="col-sm-4">
+            <h5>Amazon</h5>
+            <p>
+              Get Deals on Popular Items on Amazon. Browse & Discover Thousands
+              of Brands. Read Customer Reviews and Find Best Sellers.
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <div class="scrolToTopBtn">
+      <span class="fas fa-chevron-left"></span>
+    </div>
+    <!-- BS JS -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+    <!-- JS -->
+    <script src="js/main.js"></script>
+  </body>
+</html>
