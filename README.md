@@ -1,0 +1,2 @@
+# Amazon-Clone
+Js project
